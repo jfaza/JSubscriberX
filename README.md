@@ -77,12 +77,6 @@ You can submit to the add-on’s Action either via `action_url` (form action att
   <button class="submit-btn" name="submit" value="1" type="submit">Subscribe</button>
 </form>
 ```
-![Control Panel](docs/images/example-1.png)
-
-**Response:**
-```
-{success: true, status: 'subscribed', message: 'Already subscribed'}
-```
 
 ### Option B — Form `action` URL
 ```html
