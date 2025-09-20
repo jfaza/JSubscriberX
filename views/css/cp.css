@@ -1,0 +1,162 @@
+/* --- JSubscriberX minimal form (scoped) --- */
+.jx-form {
+  --fg: #1f2937;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --ring: #2563eb;
+  --ring-weak: rgba(37,99,235,.15);
+  --bg: #fff;
+  --bg-soft: #f8fafc;
+  --radius: 10px;
+  --shadow: 0 1px 2px rgba(16,24,40,.06), 0 1px 1px rgba(16,24,40,.04);
+  font: 14px/1.5 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  color: var(--fg);
+}
+
+.jx-title { margin: 0 0 4px; font-weight: 700; font-size: 20px; }
+.jx-lead  { margin: 0 0 16px; color: var(--muted); }
+
+.jx-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 18px;
+}
+
+/* each label on its own line (stacked layout) */
+.jx-field { display: block; margin-top: 14px; }
+.jx-field:first-child { margin-top: 0; }
+
+.jx-field > label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.jx-hint {
+  display: block;
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 12.5px;
+}
+
+/* controls */
+.jx-field input[type="text"],
+.jx-field input[type="password"],
+.jx-field input[type="email"],
+.jx-field select {
+  width: 100%;
+  max-width: 640px;
+  height: 42px;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+  transition: border-color .14s ease, box-shadow .14s ease;
+}
+
+.jx-field textarea {
+  width: 100%;
+  max-width: 640px;
+  min-height: 120px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  resize: vertical;
+}
+
+.jx-field input:focus,
+.jx-field select:focus,
+.jx-field textarea:focus {
+  outline: none;
+  border-color: var(--ring);
+  box-shadow: 0 0 0 3px var(--ring-weak);
+}
+
+/* checkbox row (still stacked: label line + control line) */
+.jx-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  background: var(--bg-soft);
+  max-width: 640px;
+}
+
+/* actions */
+.jx-actions { margin-top: 16px; }
+.jx-btn {
+  appearance: none;
+  border: 1px solid var(--border);
+  background: #fff;
+  padding: 10px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform .05s ease, box-shadow .14s ease, filter .14s ease;
+}
+.jx-btn-primary {
+  border: 0;
+  background: #2563eb;
+  color: #fff;
+  box-shadow: 0 1px 0 rgba(0,0,0,.05), 0 6px 14px rgba(37,99,235,.22);
+}
+.jx-btn:hover { transform: translateY(-1px); }
+.jx-btn-primary:hover { filter: brightness(1.03); }
+
+/* optional states */
+.jx-field .is-error { border-color: #ef4444 !important; box-shadow: 0 0 0 3px rgba(239,68,68,.16) !important; }
+.jx-field .help-error { color: #ef4444; font-size: 12.5px; margin-top: 6px; }
+/* ---------------------------------------------------------------------------------- */
+
+/* ===== JSubscriberX – Overview (Index) polish ===== */
+
+/* Card header */
+.jx-card-head{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:12px; margin:0 0 10px;
+}
+
+/* Summary grid (key–value rows) */
+.jx-summary{
+  border:1px solid rgba(0,0,0,.07);
+  border-radius:8px; overflow:hidden;
+}
+.jx-kv{
+  display:grid; grid-template-columns:220px 1fr;
+  gap:8px 16px; padding:12px 16px;
+}
+.jx-kv + .jx-kv{ border-top:1px solid rgba(0,0,0,.06); }
+.jx-kv__label{ font-weight:600; color:#6b7280; }
+.jx-kv__value{ color:#111827; }
+
+/* Monospace chips for IDs/keys */
+.jx-code{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  background: rgba(0,0,0,.03); padding:2px 6px; border-radius:6px;
+}
+
+/* Pills (status) */
+.jx-pill{
+  display:inline-flex; align-items:center; gap:8px;
+  font-size:12px; padding:4px 8px; border-radius:999px;
+  border:1px solid rgba(0,0,0,.12); color:#555; background:rgba(0,0,0,.03);
+}
+.jx-pill.success{ border-color:rgba(22,163,74,.25); color:#16a34a; background:rgba(22,163,74,.10); }
+.jx-pill.danger{  border-color:rgba(239,68,68,.25); color:#ef4444; background:rgba(239,68,68,.10); }
+
+/* Buttons in header */
+.jx-actions{ display:flex; align-items:center; gap:10px; }
+.jx-btn{ padding:8px 14px; border-radius:10px; border:1px solid rgba(0,0,0,.12); background:#fff; }
+.jx-btn-primary{ border:0; background:#2563eb; color:#fff; }
+
+/* Responsive: stack labels/values */
+@media (max-width: 880px){
+  .jx-kv{ grid-template-columns:1fr; }
+}
+
+.eye{
+  display:none;
+}
