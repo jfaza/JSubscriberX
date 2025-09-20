@@ -30,7 +30,7 @@ It’s built for flexibility, security, and easy integration with mailing servic
 ![Test Connection](docs/images/test-connection.png)
 
 ### Logs
-![Logs] (docs/images/logs.png)
+![Logs](docs/images/logs.png)
 
 ---
 
